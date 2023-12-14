@@ -1,0 +1,567 @@
+<?php 
+
+include 'assets/configs/config.php';
+if (!empty($_POST)) {
+
+	if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['message']))
+	{
+		echo "<script>alert('Todos los campos son obligatorios.')</script>";
+	}else{
+        
+        $name =      $_POST['name'];
+        $email =   $_POST['email'];
+        $message =   $_POST['message'];
+        
+
+
+		$result = 0;
+
+		$query = "INSERT INTO mensajes_oscar(nombre,correo,mensaje)VALUES('$name','$email','$message')";
+		$result = mysqli_query($conex,$query);
+
+		if($result) {
+			echo "<script type='text/javascript'>
+                    window.location='./index.php';
+                  </script>";
+		}else {
+			echo "<script>alert('Error al guardar, intente de nuevo.')</script>";
+		}
+	}
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>Oscar Martínez Portfolio's</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/templatemo-style.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
+
+    </head>
+    
+    <body>
+    
+    <div id="video">
+        <div class="preloader">
+            <div class="preloader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <header id="header">
+            <div class="container-fluid">
+                <div class="navbar">
+                    <a href="#" id="logo" title="Elegance by TemplateMo">
+                        Oscar Martínez
+                    </a>
+                    <div class="navigation-row">
+                        <nav id="navigation">
+                            <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+                            <div class="nav-box navbar-collapse">
+                                <ul class="navigation-menu nav navbar-nav navbars" id="nav">
+                                    <li data-menuanchor="slide01" class="active"><a href="#slide01">Home</a></li>
+                                    <li data-menuanchor="slide02"><a href="#slide02">About Me</a></li>
+                                    <li data-menuanchor="slide03"><a href="#slide03">Services</a></li>
+                                    <li data-menuanchor="slide04"><a href="#slide04">My Skills</a></li>
+                                    <li data-menuanchor="slide05"><a href="#slide05">My Work</a></li>
+                                    <li data-menuanchor="slide06"><a href="#slide06">Testimonials</a></li>
+                                    <li data-menuanchor="slide07"><a href="#slide07">Contact Me</a></li>
+                                    <li><a href="workexp.php">Work Exp.</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <video autoplay muted loop id="myVideo">
+          <source src="images/video-bg.mp4" type="video/mp4">
+        </video>
+
+        <div id="fullpage" class="fullpage-default">
+
+            <div class="section animated-row" data-section="slide01">
+                <div class="section-inner">
+                    <div class="welcome-box">
+                        <span class="welcome-first animate" data-animate="fadeInUp">Hello, I'm</span>
+                        <!-- <h1 class="welcome-title animate" data-animate="fadeInUp">elegance</h1> -->
+                        <div class="welcome-title2 animate" data-animate="fadeInUp">
+                            <span class="typed" data-typed-items="Oscar Martínez, Designer, Developer, Freelancer, Programmer"></span>
+
+                        </div>
+                        
+                        <p class="animate" data-animate="fadeInUp">I'm a computer science engineer passionate about web development (backend) and programming.</p>
+                        <div class="scroll-down next-section animate data-animate="fadeInUp""><img src="images/mouse-scroll.png" alt=""><span>Scroll Down</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide02">
+                <div class="section-inner">
+                    <div class="about-section">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 wide-col-laptop">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="about-contentbox">
+                                            <div class="animate" data-animate="fadeInUp">
+                                                <span>About Me</span>
+                                                <h2>Who am i?</h2>
+                                                <p>Since beginning my journey as a <strong>freelancer developer</strong>  over 2 years ago, I've done remote work for agencies, and collaborated with talented people to create digital products for both business and consumer use. I'm quietly confident, naturally curious, and perpetually working on improving my chops.</p>
+                                            </div>
+                                            <div class="facts-list owl-carousel">
+                                                <a class="item animate" data-animate="fadeInUp" href="certificados.php">
+                                                
+                                                    <div class="counter-box">
+                                                        <i  class="fa fa-certificate counter-icon" aria-hidden="true"></i><span class="count-number">10</span> Certificates
+                                                    </div>
+                                                
+                                                </a>
+                                                <!-- <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-trophy counter-icon" aria-hidden="true"></i><span class="count-number">32</span> Awards Won
+                                                    </div>
+                                                </div> -->
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-graduation-cap counter-icon" aria-hidden="true"></i><span class="count-number">2</span> Degrees
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-desktop counter-icon" aria-hidden="true"></i><span class="count-number">2</span> Working Years
+                                                    </div>
+                                                </div>
+                                                <div class="item animate" data-animate="fadeInUp">
+                                                    <div class="counter-box">
+                                                        <i class="fa fa-support counter-icon" aria-hidden="true"></i><span class="count-number">3</span> Team Members
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <figure class="about-img animate" data-animate="fadeInUp"><img src="images/profile.jpg" class="rounded" alt=""></figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide03">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Services</span>
+                                <h2>What I Do?</h2>
+                            </div>
+                            <div class="services-section">
+                                <div class="services-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                            <h3>PHP Web Applications</h3>
+                                            <p>Applications developed with PHP, JavaScript, Css, React, SQL. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+                                            <h3>HTML5 & CSS</h3>
+                                            <p>Informative web pages for businesses and companies developed with HTML5, CSS and JavaScript. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-desktop" aria-hidden="true"></i></span>
+                                            <h3>Fully Responsive</h3>
+                                            <p>Full Responsive web pages and applications. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                                            <h3>Mobile Apps</h3>
+                                            <p>Development of informative mobile applications. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-comments" aria-hidden="true"></i></span>
+                                            <h3>Fast Support</h3>
+                                            <p>Fast support answer. Personalized attention to each project. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-laptop" aria-hidden="true"></i></span>
+                                            <h3>Programming</h3>
+                                            <p>Experience with Python, Java, C++, C, C#, Visual Basic, React Native, Flutter. </p>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="service-box">
+                                            <span class="service-icon"><i class="fa fa-camera" aria-hidden="true"></i></span>
+                                            <h3>Designs</h3>
+                                            <p>Experience with Illustrator, Photoshop, Premiere, After Effects, Corel Draw, Sony Vegas, Blender. </p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide04">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>My Skills</span>
+                                <h2>What i’m good?</h2>
+                            </div>
+                            <div class="skills-row animate" data-animate="fadeInDown">
+                                <div class="row">
+                                    <div class="col-md-8 offset-md-2">   
+                                        <div class="skill-item">
+                                            <h6>HTML CSS</h6>
+                                            <div class="skill-bar">
+                                                <span>93%</span>
+                                                <div class="filled-bar-3"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>PSD Design</h6>
+                                            <div class="skill-bar">
+                                                <span>90%</span>
+                                                <div class="filled-bar-2"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item">
+                                            <h6>Social Media</h6>
+                                            <div class="skill-bar">
+                                                <span>95%</span>
+                                                <div class="filled-bar-4"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>Leadership</h6>
+                                            <div class="skill-bar">
+                                                <span>90%</span>
+                                                <div class="filled-bar-2"></div>
+                                            </div>          
+                                        </div>  
+                                        <div class="skill-item last-skill">
+                                            <h6>Python</h6>
+                                            <div class="skill-bar">
+                                                <span>85%</span>
+                                                <div class="filled-bar"></div>
+                                            </div>          
+                                        </div> 
+                                        <div class="skill-item last-skill">
+                                            <h6>PHP</h6>
+                                            <div class="skill-bar">
+                                                <span>80%</span>
+                                                <div class="filled-bar-5"></div>
+                                            </div>          
+                                        </div>
+                                        <div class="skill-item last-skill">
+                                            <h6>SQL</h6>
+                                            <div class="skill-bar">
+                                                <span>75%</span>
+                                                <div class="filled-bar-5"></div>
+                                            </div>          
+                                        </div>
+                                                     
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide06">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>My Work</span>
+                                <h2>what i’ve done?</h2>
+                            </div>
+                            <div class="gallery-section">
+                                <div class="gallery-list owl-carousel">
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/Corporativo.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4><a  href="https://dcomdesigns.com/index.php" target="_blank"> Corporativo Tributario</a> </h4>
+                                                <p>Web application developed in PHP to keep the monetary control of the company.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/houston.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4><a  href="https://dcomdesigns.com/houstonTax/index.html" target="_blank"> Tax and Business</a> </h4>
+                                                <p >Informative web page developed with HTML5, CSS and JavaScript to publicize the services offered by the company.</p>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img  src="images/iglesia.png" alt="">
+                                            </div>
+                                            <div  class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4><a  href="https://pastorronaldmartinez.com" target="_blank"> Iglesia Maranatha</a> </h4>
+                                                <p>Informative web page developed with HTML5, CSS and JavaScript to publicize the services and information of the Maranatha Church.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/pure.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>Pure Minutes Logo</h4>
+                                                <p>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/item-2.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download Bootstrap CSS templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/item-3.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/item-1.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/item-2.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <img src="images/item-3.jpg" alt="">
+                                            </div>
+                                            <div class="thumb-inner animate" data-animate="fadeInUp">
+                                                <h4>templatemo is the best</h4>
+                                                <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap templates.</p>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide05">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>TESTIMONIALS</span>
+                                <h2>what THEY SAY?</h2>
+                            </div>
+                            <div class="col-md-8 offset-md-2">
+                                <div class="testimonials-section">
+                                    <div class="testimonials-slider owl-carousel">
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="images/daniel.png" class="rounded-circle" alt="profile 1">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>Daniel Castellanos</h4>
+                                                    <p>"Great person, responsible, focused and hardworking. I have known him for more than 7 years. He likes challenges.."</p>
+                                                    <span>Founder & Frontend Developer (DCOM DESIGNS)</span>
+                                                </div>                                           
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="images/william.jpg" class="rounded-circle" alt="profile 2">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>William Aguilar</h4>
+                                                    <p>"He was under my supervision for 1 year as director of digital marketing, very responsible and committed to his work."</p>
+                                                    <span>Manager (Global Connections)</span>
+                                                </div>                                           
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="testimonial-item">
+                                                <div class="client-row">
+                                                    <img src="images/oscar.png" class="rounded-circle" alt="profile 3">
+                                                </div>
+                                                <div class="testimonial-content">
+                                                    <h4>Oscar Pulido</h4>
+                                                    <p>"
+                                                        He designed my website, I am delighted with the results, we currently work together for large companies."</p>
+                                                    <span>CEO & Manager (Houston Tax and Business Services)</span>
+                                                </div>                                           
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section animated-row" data-section="slide07">
+                <div class="section-inner">
+                    <div class="row justify-content-center">
+                        <div class="col-md-7 wide-col-laptop">
+                            <div class="title-block animate" data-animate="fadeInUp">
+                                <span>Contact</span>
+                                <h2>Get In Touch!</h2>
+                            </div>
+                            <div class="contact-section">
+                                <div class="row">
+                                    <div class="col-md-6 animate" data-animate="fadeInUp">
+                                        <div class="contact-box">
+                                            <div class="contact-row">
+                                                <i class="fa fa-map-marker"></i> Choluteca, Honduras
+                                            </div>
+                                            <div class="contact-row">
+                                                <i class="fa fa-phone"></i>+504 3255-8398
+                                            </div>
+                                            <div class="contact-row">
+                                                <i class="fa fa-envelope"></i> oscarmartinezcarcamo@gmail.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 animate" data-animate="fadeInUp">
+                                        <form id="ajax-contact" method="post" action="">
+                                            <div class="input-field">
+                                                <input type="text" class="form-control" name="name" id="name" required placeholder="Name">
+                                            </div>
+                                            <div class="input-field">
+                                                <input type="email" class="form-control" name="email" id="email" required placeholder="Email">
+                                            </div>
+                                            <div class="input-field">
+                                                <textarea class="form-control" name="message" id="message" required placeholder="Message"></textarea>
+                                            </div>
+                                            <button class="btn" name="enviar" type="submit">Submit</button>
+                                        </form>
+                                        
+                                        <div id="form-messages" class="mt-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="social-icons">
+            <div class="text-right">
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/oscarmusicodecholuteca/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/oscareduardomc" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.instagram.com/oscareduardomc/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/fullpage.min.js"></script>
+
+    <script src="js/scrolloverflow.js"></script>
+
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/jquery.inview.min.js"></script>
+
+   
+    <script src="js/typed.js/typed.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+
+  </body>
+</html>
